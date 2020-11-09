@@ -2,21 +2,20 @@ import pandas as pd
 
 
 def load_excel(filename):
-    mail_list = open(filename, "r")
+    mail_list = open(filename, "r", encoding="UTF8")
     return mail_list
 
 
-def convert_to_pandas(excel_file):
-    df = pd.read_excel(excel_file)
+def convert_to_pandas(csv_file):
+    df = pd.read_csv(csv_file)
     return df
 
 
 def main():
-    file = load_excel("train_list.xlsx")
+    file = load_excel("Data/train_list.csv")
     table = convert_to_pandas(file)
     print(table)
 
 
 if __name__ == '__main__':
     main()
-
